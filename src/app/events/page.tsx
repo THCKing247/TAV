@@ -17,13 +17,13 @@ export default function EventsPage() {
 
   return (
     <>
-      <section className="border-b border-violet-100 bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 px-4 py-16 text-white sm:px-6 sm:py-20 lg:px-8">
+      <section className="border-b border-stone-200/90 bg-gradient-to-b from-stone-100/80 via-[#faf9f7] to-stone-50 px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
-          <p className="text-xs font-semibold uppercase tracking-[0.28em] text-indigo-200/80">Events</p>
-          <h1 className="mt-4 font-display text-4xl font-bold tracking-tight sm:text-5xl">
+          <p className="text-xs font-semibold uppercase tracking-[0.24em] text-stone-600">Events</p>
+          <h1 className="mt-4 font-display text-4xl font-bold tracking-tight text-stone-900 sm:text-5xl">
             The calendar is where the village shows up
           </h1>
-          <p className="mt-6 text-lg leading-relaxed text-indigo-100/90">
+          <p className="mt-6 text-lg leading-relaxed text-stone-700">
             Flagship community events are our front door: high-trust, high-energy, and built to connect people
             with resources that outlast a single night.
           </p>
@@ -39,12 +39,12 @@ export default function EventsPage() {
         <div className="mt-10 max-w-3xl">
           <EventCard event={flagshipEvent} featured />
         </div>
-        <p className="mt-8 text-sm text-slate-600">
+        <p className="mt-8 text-sm text-stone-600">
           Add ticketing, RSVP, or volunteer roles here when workflows are finalized. Calendar link:{" "}
           {siteConfig.links.eventCalendar.startsWith("[") ? (
-            <span className="font-medium text-slate-800">[Insert event calendar link]</span>
+            <span className="font-medium text-stone-800">[Insert event calendar link]</span>
           ) : (
-            <Link href={siteConfig.links.eventCalendar} className="font-semibold text-indigo-700 underline">
+            <Link href={siteConfig.links.eventCalendar} className="font-semibold text-stone-800 underline">
               View calendar
             </Link>
           )}
@@ -76,7 +76,7 @@ export default function EventsPage() {
           {[1, 2, 3, 4, 5, 6].map((n) => (
             <div
               key={n}
-              className="flex aspect-[4/3] items-end rounded-2xl border border-dashed border-slate-300 bg-gradient-to-br from-slate-100 to-indigo-50 p-4 text-sm text-slate-500"
+              className="flex aspect-[4/3] items-end rounded-2xl border border-dashed border-stone-300 bg-gradient-to-br from-stone-100 to-amber-50/50 p-4 text-sm text-stone-500"
             >
               <span>
                 Image placeholder {n} — alt text: describe the moment, faces, and setting when you replace

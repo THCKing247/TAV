@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { Logo } from "@/components/brand/Logo";
+import { BrandMark } from "@/components/brand/BrandMark";
 
 const navItems = [
   { href: "/", label: "Home" },
@@ -36,10 +36,10 @@ function NavLinks({
             <Link
               href={item.href}
               onClick={onNavigate}
-              className={`block rounded-lg px-3 py-2 text-sm font-medium transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/80 ${
+              className={`block rounded-lg px-3 py-2 text-sm font-medium transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-stone-500 ${
                 active
-                  ? "bg-white/15 text-white"
-                  : "text-indigo-100/90 hover:bg-white/10 hover:text-white"
+                  ? "bg-stone-200/80 text-stone-900"
+                  : "text-stone-700 hover:bg-stone-100 hover:text-stone-900"
               }`}
               aria-current={active ? "page" : undefined}
             >
@@ -63,35 +63,33 @@ export function Header() {
   }, [open]);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-white/10 bg-[#0b1220]/90 shadow-[0_8px_30px_rgba(15,23,42,0.35)] backdrop-blur-md">
+    <header className="sticky top-0 z-50 border-b border-stone-200/90 bg-[#faf9f7]/95 shadow-sm backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
         <Link
           href="/"
-          className="group flex min-h-[44px] min-w-[44px] items-center gap-2 rounded-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-indigo-400"
+          className="group flex min-h-[44px] flex-col justify-center gap-0.5 rounded-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-stone-500"
           aria-label="Takes A Village — Home"
         >
-          <span aria-hidden="true">
-            <Logo />
+          <BrandMark />
+          <span className="text-[10px] font-medium uppercase tracking-[0.2em] text-stone-500 sm:text-[11px]">
+            Takes A Village
           </span>
         </Link>
 
-        <nav
-          className="hidden lg:block"
-          aria-label="Primary"
-        >
+        <nav className="hidden lg:block" aria-label="Primary">
           <NavLinks className="flex flex-wrap items-center justify-end gap-1" />
         </nav>
 
         <div className="flex items-center gap-2">
           <Link
             href="/get-involved"
-            className="hidden min-h-[44px] items-center rounded-full bg-gradient-to-r from-violet-600 to-blue-600 px-4 py-2 text-sm font-semibold text-white shadow-[0_0_24px_rgba(124,58,237,0.35)] transition hover:brightness-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-300 sm:inline-flex"
+            className="hidden min-h-[44px] items-center rounded-full bg-stone-800 px-4 py-2 text-sm font-semibold text-stone-50 shadow-sm transition hover:bg-stone-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-stone-500 sm:inline-flex"
           >
             Get Involved
           </Link>
           <button
             type="button"
-            className="inline-flex min-h-[44px] min-w-[44px] items-center justify-center rounded-lg border border-white/15 bg-white/5 p-2 text-white lg:hidden"
+            className="inline-flex min-h-[44px] min-w-[44px] items-center justify-center rounded-lg border border-stone-300 bg-white p-2 text-stone-800 lg:hidden"
             aria-expanded={open}
             aria-controls="mobile-menu"
             onClick={() => setOpen((v) => !v)}
@@ -118,7 +116,7 @@ export function Header() {
       {open ? (
         <div
           id="mobile-menu"
-          className="border-t border-white/10 bg-[#0b1220]/98 px-4 py-4 lg:hidden"
+          className="border-t border-stone-200 bg-[#faf9f7] px-4 py-4 lg:hidden"
         >
           <NavLinks
             onNavigate={() => setOpen(false)}
@@ -127,7 +125,7 @@ export function Header() {
           <Link
             href="/get-involved"
             onClick={() => setOpen(false)}
-            className="mt-4 flex min-h-[48px] w-full items-center justify-center rounded-full bg-gradient-to-r from-violet-600 to-blue-600 px-4 py-3 text-sm font-semibold text-white"
+            className="mt-4 flex min-h-[48px] w-full items-center justify-center rounded-full bg-stone-800 px-4 py-3 text-sm font-semibold text-stone-50"
           >
             Get Involved
           </Link>

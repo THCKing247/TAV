@@ -40,13 +40,13 @@ const blocks = [
 export default function GetInvolvedPage() {
   return (
     <>
-      <section className="border-b border-violet-100 bg-white px-4 py-16 sm:px-6 lg:px-8">
+      <section className="border-b border-stone-200/90 bg-[#faf9f7] px-4 py-16 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
-          <p className="text-xs font-semibold uppercase tracking-[0.24em] text-violet-700">Get involved</p>
-          <h1 className="mt-4 font-display text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl">
+          <p className="text-xs font-semibold uppercase tracking-[0.24em] text-stone-600">Get involved</p>
+          <h1 className="mt-4 font-display text-4xl font-bold tracking-tight text-stone-900 sm:text-5xl">
             The village gets stronger when you step in
           </h1>
-          <p className="mt-6 text-lg leading-relaxed text-slate-600">
+          <p className="mt-6 text-lg leading-relaxed text-stone-600">
             Whether you can give an afternoon, a skill, or a sponsorship that keeps tables free at the door—
             there is a lane for you at {siteConfig.shortName}.
           </p>
@@ -59,13 +59,13 @@ export default function GetInvolvedPage() {
             <section
               key={b.id}
               id={b.id}
-              className="scroll-mt-28 rounded-2xl border border-slate-200 bg-gradient-to-br from-white to-indigo-50/30 p-8 shadow-sm transition hover:-translate-y-0.5 hover:border-violet-200"
+              className="scroll-mt-28 rounded-2xl border border-stone-200 bg-gradient-to-br from-white to-amber-50/30 p-8 shadow-sm transition hover:-translate-y-0.5 hover:border-stone-300"
             >
-              <h2 className="font-display text-2xl font-bold text-slate-900">{b.title}</h2>
-              <p className="mt-4 text-sm leading-relaxed text-slate-600">{b.body}</p>
+              <h2 className="font-display text-2xl font-bold text-stone-900">{b.title}</h2>
+              <p className="mt-4 text-sm leading-relaxed text-stone-600">{b.body}</p>
               <Link
                 href={b.cta.href}
-                className="mt-6 inline-flex min-h-[44px] items-center justify-center rounded-full bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-slate-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
+                className="mt-6 inline-flex min-h-[44px] items-center justify-center rounded-full bg-stone-800 px-5 py-2.5 text-sm font-semibold text-stone-50 transition hover:bg-stone-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-stone-500"
               >
                 {b.cta.label}
               </Link>

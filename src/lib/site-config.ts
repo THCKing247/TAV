@@ -44,6 +44,15 @@ export const siteConfig = {
     donation: "[Insert donation link]",
     eventCalendar: "[Insert event calendar link]",
   },
+  /** Update when official mailing details are confirmed */
+  donations: {
+    checksPayableTo: "Takes A Village",
+    mailingAddressLines: [
+      "[Insert organization name]",
+      "[Insert street address]",
+      "Pinellas Park, FL [Insert ZIP]",
+    ] as const,
+  },
   social: {
     instagramTav: {
       handle: "tavj5llc",

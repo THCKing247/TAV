@@ -13,13 +13,13 @@ export const metadata = buildPageMetadata({
 export default function ProgramsPage() {
   return (
     <>
-      <section className="border-b border-violet-100 bg-white px-4 py-16 sm:px-6 lg:px-8">
+      <section className="border-b border-stone-200/90 bg-[#faf9f7] px-4 py-16 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
-          <p className="text-xs font-semibold uppercase tracking-[0.24em] text-violet-700">Programs</p>
-          <h1 className="mt-4 font-display text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl">
+          <p className="text-xs font-semibold uppercase tracking-[0.24em] text-stone-600">Programs</p>
+          <h1 className="mt-4 font-display text-4xl font-bold tracking-tight text-stone-900 sm:text-5xl">
             Services that meet people with respect—and follow-through
           </h1>
-          <p className="mt-6 text-lg leading-relaxed text-slate-600">
+          <p className="mt-6 text-lg leading-relaxed text-stone-600">
             Each program line below can grow with you: start with clear descriptions today, then layer in
             schedules, eligibility, and partner logos as your nonprofit scales.
           </p>

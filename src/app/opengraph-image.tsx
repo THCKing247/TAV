@@ -16,36 +16,37 @@ export default function OgImage() {
           flexDirection: "column",
           justifyContent: "center",
           padding: 72,
-          background: "linear-gradient(135deg, #0b1220 0%, #312e81 45%, #1d4ed8 100%)",
-          color: "white",
+          background: "linear-gradient(145deg, #faf9f7 0%, #f3f1ec 45%, #e7e5e0 100%)",
+          color: "#292524",
           fontFamily: "system-ui, sans-serif",
         }}
       >
-        <div style={{ fontSize: 22, letterSpacing: "0.2em", textTransform: "uppercase", opacity: 0.85 }}>
+        <div style={{ fontSize: 22, letterSpacing: "0.18em", textTransform: "uppercase", color: "#57534e" }}>
           Pinellas Park · Nonprofit
         </div>
-        <div style={{ marginTop: 18, fontSize: 64, fontWeight: 800, lineHeight: 1.05, maxWidth: 900 }}>
+        <div style={{ marginTop: 18, fontSize: 58, fontWeight: 800, lineHeight: 1.05, maxWidth: 900 }}>
           {siteConfig.name}
         </div>
-        <div style={{ marginTop: 24, fontSize: 28, maxWidth: 880, lineHeight: 1.35, opacity: 0.92 }}>
-          Five-star community resources, flagship events, and local outreach—built grassroots, delivered
-          with heart.
+        <div style={{ marginTop: 24, fontSize: 26, maxWidth: 880, lineHeight: 1.4, color: "#44403c" }}>
+          Five-star community resources, flagship events, and local outreach—built grassroots, delivered with
+          heart.
         </div>
         <div
           style={{
             marginTop: 48,
             display: "flex",
             gap: 16,
-            fontSize: 22,
+            fontSize: 20,
             fontWeight: 600,
+            color: "#292524",
           }}
         >
           <span
             style={{
               borderRadius: 999,
               padding: "12px 22px",
-              background: "rgba(255,255,255,0.12)",
-              border: "1px solid rgba(255,255,255,0.25)",
+              background: "rgba(255,255,255,0.85)",
+              border: "1px solid #d6d3d1",
             }}
           >
             Community events
@@ -54,8 +55,8 @@ export default function OgImage() {
             style={{
               borderRadius: 999,
               padding: "12px 22px",
-              background: "rgba(255,255,255,0.12)",
-              border: "1px solid rgba(255,255,255,0.25)",
+              background: "rgba(255,255,255,0.85)",
+              border: "1px solid #d6d3d1",
             }}
           >
             Entrepreneurship support

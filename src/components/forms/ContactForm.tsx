@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { btnPrimaryClass, fieldInputClass, fieldLabelClass, fieldTextareaClass } from "@/components/ui/form-styles";
 
 export function ContactForm() {
   const [status, setStatus] = useState<"idle" | "sent">("idle");
@@ -16,7 +17,7 @@ export function ContactForm() {
     >
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
-          <label htmlFor="name" className="block text-sm font-semibold text-slate-800">
+          <label htmlFor="name" className={fieldLabelClass}>
             Full name
           </label>
           <input
@@ -25,11 +26,11 @@ export function ContactForm() {
             type="text"
             autoComplete="name"
             required
-            className="mt-2 w-full min-h-[44px] rounded-xl border border-slate-200 bg-white px-4 py-2 text-slate-900 shadow-sm outline-none ring-0 transition focus:border-violet-500 focus:ring-2 focus:ring-violet-200"
+            className={fieldInputClass}
           />
         </div>
         <div>
-          <label htmlFor="email" className="block text-sm font-semibold text-slate-800">
+          <label htmlFor="email" className={fieldLabelClass}>
             Email
           </label>
           <input
@@ -38,12 +39,12 @@ export function ContactForm() {
             type="email"
             autoComplete="email"
             required
-            className="mt-2 w-full min-h-[44px] rounded-xl border border-slate-200 bg-white px-4 py-2 text-slate-900 shadow-sm outline-none transition focus:border-violet-500 focus:ring-2 focus:ring-violet-200"
+            className={fieldInputClass}
           />
         </div>
       </div>
       <div>
-        <label htmlFor="topic" className="block text-sm font-semibold text-slate-800">
+        <label htmlFor="topic" className={fieldLabelClass}>
           I am reaching out about
         </label>
         <select
@@ -51,7 +52,7 @@ export function ContactForm() {
           name="topic"
           defaultValue=""
           required
-          className="mt-2 w-full min-h-[44px] rounded-xl border border-slate-200 bg-white px-4 py-2 text-slate-900 shadow-sm outline-none transition focus:border-violet-500 focus:ring-2 focus:ring-violet-200"
+          className={fieldInputClass}
         >
           <option value="" disabled>
             Select a topic
@@ -65,7 +66,7 @@ export function ContactForm() {
         </select>
       </div>
       <div>
-        <label htmlFor="message" className="block text-sm font-semibold text-slate-800">
+        <label htmlFor="message" className={fieldLabelClass}>
           Message
         </label>
         <textarea
@@ -74,23 +75,19 @@ export function ContactForm() {
           rows={5}
           required
           placeholder="Tell us how we can connect with you or your organization."
-          className="mt-2 w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-slate-900 shadow-sm outline-none transition focus:border-violet-500 focus:ring-2 focus:ring-violet-200"
+          className={fieldTextareaClass}
         />
       </div>
-      <button
-        type="submit"
-        className="inline-flex min-h-[48px] w-full items-center justify-center rounded-full bg-gradient-to-r from-violet-600 to-blue-600 px-6 py-3 text-sm font-semibold text-white shadow-lg transition hover:brightness-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 sm:w-auto"
-      >
+      <button type="submit" className={`${btnPrimaryClass} w-full sm:w-auto`}>
         Send message
       </button>
       {status === "sent" ? (
-        <p className="text-sm font-medium text-emerald-700" role="status">
+        <p className="text-sm font-medium text-emerald-800" role="status">
           Thanks—this demo form captured your intent. Wire this to email or a CRM when you are ready.
         </p>
       ) : (
-        <p className="text-xs text-slate-500">
-          This form is front-end only. Connect it to your email service or backend to deliver messages
-          securely.
+        <p className="text-xs text-stone-500">
+          This form is front-end only. Connect it to your email service or backend to deliver messages securely.
         </p>
       )}
     </form>

@@ -57,13 +57,13 @@ export function WhatWeDoGrid({ items }: WhatWeDoGridProps) {
     <ul className="grid gap-6 md:grid-cols-2">
       {items.map((item) => (
         <li key={item.id}>
-          <div className="group flex h-full gap-4 rounded-2xl border border-slate-200/90 bg-white p-6 shadow-sm transition hover:-translate-y-0.5 hover:border-violet-200 hover:shadow-md">
-            <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-violet-600 to-blue-600 shadow-[0_12px_30px_rgba(79,70,229,0.35)] transition group-hover:scale-105">
+          <div className="group flex h-full gap-4 rounded-2xl border border-stone-200/90 bg-white p-6 shadow-sm transition hover:-translate-y-0.5 hover:border-stone-300 hover:shadow-md">
+            <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-stone-600 to-stone-700 shadow-sm transition group-hover:scale-[1.02]">
               <Icon type={item.icon} />
             </div>
             <div>
-              <h3 className="font-display text-lg font-bold text-slate-900">{item.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-slate-600">{item.description}</p>
+              <h3 className="font-display text-lg font-bold text-stone-900">{item.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-stone-600">{item.description}</p>
             </div>
           </div>
         </li>

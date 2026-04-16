@@ -41,8 +41,8 @@ export default function HomePage() {
           title="Grassroots heart. Five-star standards."
           subtitle={`${siteConfig.shortName} was built on a simple truth: when neighbors organize with care, the whole village rises. We combine bold, urban-community energy with the reliability people deserve—especially when they are navigating resources, launching a business, or looking for a place to belong.`}
         />
-        <div className="mt-10 rounded-3xl border border-violet-100 bg-gradient-to-br from-white via-indigo-50/40 to-violet-50/50 p-8 shadow-sm sm:p-10">
-          <p className="text-lg leading-relaxed text-slate-700">
+        <div className="mt-10 rounded-3xl border border-stone-200/90 bg-gradient-to-br from-white via-stone-50 to-amber-50/30 p-8 shadow-sm sm:p-10">
+          <p className="text-lg leading-relaxed text-stone-700">
             From block parties with purpose to tables stacked with actionable information, our work is
             rooted in Pinellas Park while staying open to partnerships across Pinellas County. This is
             nonprofit work that feels human—loud when celebration is due, steady when someone needs a
@@ -62,11 +62,11 @@ export default function HomePage() {
         </div>
       </SectionShell>
 
-      <SectionShell id="impact" surface="dark" className="!py-0 sm:!py-0 lg:!py-0">
-        <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-gradient-to-br from-[#0b1220] via-indigo-950 to-[#0b1220] px-4 py-16 sm:px-8 sm:py-20">
-          <div className="pointer-events-none absolute inset-0 opacity-60">
-            <div className="absolute -left-20 top-0 h-64 w-64 rounded-full bg-violet-600/35 blur-3xl" />
-            <div className="absolute -right-24 bottom-0 h-72 w-72 rounded-full bg-blue-600/30 blur-3xl" />
+      <SectionShell id="impact" surface="muted" className="!py-0 sm:!py-0 lg:!py-0">
+        <div className="relative overflow-hidden rounded-[2rem] border border-stone-200/90 bg-gradient-to-br from-white via-stone-50 to-amber-50/25 px-4 py-16 sm:px-8 sm:py-20">
+          <div className="pointer-events-none absolute inset-0 opacity-70">
+            <div className="absolute -left-20 top-0 h-64 w-64 rounded-full bg-amber-100/40 blur-3xl" />
+            <div className="absolute -right-24 bottom-0 h-72 w-72 rounded-full bg-stone-200/50 blur-3xl" />
           </div>
           <div className="relative">
             <SectionHeading
@@ -96,14 +96,14 @@ export default function HomePage() {
             <EventCard key={e.id} event={e} />
           ))}
         </div>
-        <p className="mt-8 text-center text-sm text-slate-600">
+        <p className="mt-8 text-center text-sm text-stone-600">
           Official calendar:{" "}
           {siteConfig.links.eventCalendar.startsWith("[") ? (
-            <span className="font-medium text-slate-800">[Insert event calendar link]</span>
+            <span className="font-medium text-stone-800">[Insert event calendar link]</span>
           ) : (
             <Link
               href={siteConfig.links.eventCalendar}
-              className="font-semibold text-indigo-700 underline-offset-4 hover:underline"
+              className="font-semibold text-stone-800 underline-offset-4 hover:underline"
             >
               View all events
             </Link>

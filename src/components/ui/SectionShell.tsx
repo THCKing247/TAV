@@ -15,10 +15,10 @@ export function SectionShell({
 }: SectionShellProps) {
   const bg =
     surface === "muted"
-      ? "bg-slate-50"
+      ? "bg-[#f3f1ec]/90"
       : surface === "dark"
-        ? "bg-[#0b1220] text-indigo-50"
-        : "bg-white";
+        ? "bg-stone-200/40 text-stone-900"
+        : "bg-[#faf9f7]";
 
   return (
     <section id={id} className={`${bg} ${className}`}>
