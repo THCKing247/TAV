@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { siteConfig } from "./site-config";
+import { getSiteUrl, siteConfig } from "./site-config";
 
 const keywords = [
   "nonprofit in Pinellas Park",
@@ -28,7 +28,7 @@ export function buildPageMetadata({
   path = "",
   ogImage,
 }: BuildMetaArgs): Metadata {
-  const url = `${siteConfig.url}${path}`;
+  const url = `${getSiteUrl()}${path}`;
   const fullTitle = title.includes(siteConfig.name)
     ? title
     : `${title} | ${siteConfig.shortName}`;

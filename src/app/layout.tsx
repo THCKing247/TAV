@@ -4,7 +4,7 @@ import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { SkipLink } from "@/components/layout/SkipLink";
 import { defaultMetadata } from "@/lib/metadata";
-import { siteConfig } from "@/lib/site-config";
+import { getSiteUrl, siteConfig } from "@/lib/site-config";
 import "./globals.css";
 
 const outfit = Outfit({
@@ -21,7 +21,7 @@ const dmSans = DM_Sans({
 
 export const metadata: Metadata = {
   ...defaultMetadata,
-  metadataBase: new URL(siteConfig.url),
+  metadataBase: new URL(getSiteUrl()),
   authors: [{ name: siteConfig.name }],
   creator: siteConfig.name,
   formatDetection: { telephone: true, email: true, address: true },
@@ -32,7 +32,7 @@ const orgJsonLd = {
   "@type": "NGO",
   name: siteConfig.name,
   alternateName: siteConfig.shortName,
-  url: siteConfig.url,
+  url: getSiteUrl(),
   description: siteConfig.description,
   areaServed: {
     "@type": "City",
