@@ -1,65 +1,149 @@
-import Image from "next/image";
+import Link from "next/link";
+import { EventCard } from "@/components/cards/EventCard";
+import { CtaBanner } from "@/components/sections/CtaBanner";
+import { Hero } from "@/components/sections/Hero";
+import { ImpactStats } from "@/components/sections/ImpactStats";
+import { SocialSection } from "@/components/sections/SocialSection";
+import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
+import { WhatWeDoGrid } from "@/components/sections/WhatWeDoGrid";
+import { SectionShell } from "@/components/ui/SectionShell";
+import { SectionHeading } from "@/components/ui/SectionHeading";
+import { upcomingEvents } from "@/data/events";
+import { impactStats } from "@/data/stats";
+import { testimonials } from "@/data/testimonials";
+import { whatWeDo } from "@/data/what-we-do";
+import { buildPageMetadata } from "@/lib/metadata";
+import { siteConfig } from "@/lib/site-config";
 
-export default function Home() {
+export const metadata = buildPageMetadata({
+  title: `${siteConfig.name} — Community Events & Resources in Pinellas Park`,
+  description: `${siteConfig.shortName} is a nonprofit in Pinellas Park delivering five-star community resources, flagship events, entrepreneurship support, volunteer opportunities, and local outreach across the Tampa Bay area.`,
+  path: "/",
+});
+
+export default function HomePage() {
+  const featured = upcomingEvents.filter((e) => e.featured);
+  const showcase = featured.length ? featured : upcomingEvents.slice(0, 1);
+  const also = upcomingEvents.filter((e) => !showcase.includes(e)).slice(0, 2);
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
+    <>
+      <Hero
+        headline="Empowering Communities Through Events, Resources, and Connection"
+        supporting={`${siteConfig.name} (${siteConfig.shortName}) meets neighbors where they are—producing high-energy community events, warm referrals, and entrepreneurship support that keeps opportunity close to home in ${siteConfig.location.city} and beyond.`}
+        primaryCta={{ href: "/get-involved", label: "Get Involved" }}
+        secondaryCta={{ href: "/donate", label: "Support the Mission" }}
+      />
+
+      <SectionShell id="intro">
+        <SectionHeading
+          eyebrow="Who we are"
+          title="Grassroots heart. Five-star standards."
+          subtitle={`${siteConfig.shortName} was built on a simple truth: when neighbors organize with care, the whole village rises. We combine bold, urban-community energy with the reliability people deserve—especially when they are navigating resources, launching a business, or looking for a place to belong.`}
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+        <div className="mt-10 rounded-3xl border border-violet-100 bg-gradient-to-br from-white via-indigo-50/40 to-violet-50/50 p-8 shadow-sm sm:p-10">
+          <p className="text-lg leading-relaxed text-slate-700">
+            From block parties with purpose to tables stacked with actionable information, our work is
+            rooted in Pinellas Park while staying open to partnerships across Pinellas County. This is
+            nonprofit work that feels human—loud when celebration is due, steady when someone needs a
+            guide.
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </SectionShell>
+
+      <SectionShell id="what-we-do" surface="muted">
+        <SectionHeading
+          eyebrow="What we do"
+          title="Programs shaped by the community, for the community"
+          subtitle="Our flagship focus is community events—then we weave in resources, entrepreneurship, and outreach so impact doesn’t end when the music stops."
+        />
+        <div className="mt-12">
+          <WhatWeDoGrid items={whatWeDo} />
         </div>
-      </main>
-    </div>
+      </SectionShell>
+
+      <SectionShell id="impact" surface="dark" className="!py-0 sm:!py-0 lg:!py-0">
+        <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-gradient-to-br from-[#0b1220] via-indigo-950 to-[#0b1220] px-4 py-16 sm:px-8 sm:py-20">
+          <div className="pointer-events-none absolute inset-0 opacity-60">
+            <div className="absolute -left-20 top-0 h-64 w-64 rounded-full bg-violet-600/35 blur-3xl" />
+            <div className="absolute -right-24 bottom-0 h-72 w-72 rounded-full bg-blue-600/30 blur-3xl" />
+          </div>
+          <div className="relative">
+            <SectionHeading
+              align="center"
+              eyebrow="Impact"
+              title="Numbers tell part of the story—neighbor trust tells the rest"
+              subtitle="These figures are placeholders you can update as verified data becomes available. The real measure is in families welcomed, vendors championed, and blocks that feel a little more connected."
+            />
+            <div className="mt-12">
+              <ImpactStats stats={impactStats} />
+            </div>
+          </div>
+        </div>
+      </SectionShell>
+
+      <SectionShell id="featured-events">
+        <SectionHeading
+          eyebrow="On the calendar"
+          title="Featured community events"
+          subtitle="Save the dates, bring a friend, and help us fill the room with Pinellas Park pride. Full calendar link coming soon—share your email at Contact if you want direct updates."
+        />
+        <div className="mt-12 grid gap-8 lg:grid-cols-3">
+          {showcase.map((e) => (
+            <EventCard key={e.id} event={e} featured />
+          ))}
+          {also.map((e) => (
+            <EventCard key={e.id} event={e} />
+          ))}
+        </div>
+        <p className="mt-8 text-center text-sm text-slate-600">
+          Official calendar:{" "}
+          {siteConfig.links.eventCalendar.startsWith("[") ? (
+            <span className="font-medium text-slate-800">[Insert event calendar link]</span>
+          ) : (
+            <Link
+              href={siteConfig.links.eventCalendar}
+              className="font-semibold text-indigo-700 underline-offset-4 hover:underline"
+            >
+              View all events
+            </Link>
+          )}
+        </p>
+      </SectionShell>
+
+      <SectionShell surface="muted">
+        <CtaBanner
+          title="Fuel the next neighborhood night to remember"
+          body="Donations and sponsorships help us rent tents, feed volunteers, amplify local entrepreneurs, and keep resources free at the door. Every gift is a vote for Pinellas Park—and for people who deserve a win."
+          primary={{
+            href: siteConfig.links.donation.startsWith("[") ? "/donate" : siteConfig.links.donation,
+            label: "Give today",
+          }}
+          secondary={{ href: "/get-involved", label: "Volunteer" }}
+        />
+      </SectionShell>
+
+      <SectionShell id="voices">
+        <SectionHeading
+          eyebrow="Community voices"
+          title="What neighbors are saying"
+          subtitle="Real quotes will strengthen this section—capture short testimonials after your next flagship event."
+        />
+        <div className="mt-12">
+          <TestimonialsSection items={testimonials} />
+        </div>
+      </SectionShell>
+
+      <SectionShell id="social" surface="muted">
+        <SectionHeading
+          eyebrow="Stay connected"
+          title="Follow the movement on Instagram"
+          subtitle="See the setup, the smiles, and the behind-the-scenes hustle that makes TAV events feel like family reunions with a mission."
+        />
+        <div className="mt-12">
+          <SocialSection />
+        </div>
+      </SectionShell>
+    </>
   );
 }
