@@ -1,4 +1,4 @@
-TAV Website Built by Apex TSG
+Takes a Village Website Built by Apex TSG
 
 Stack:
 
@@ -6,6 +6,7 @@ Stack:
 - Tailwind
 - Netlify
 
-Visit TAV Website
+[Visit Takes a Village Website](https://takesavillage5s.netlify.app)
 
-Contact: Kenneth.mceachin@apextsgroup.com
+Contact:
+Kenneth.mceachin@apextsgroup.com
