@@ -1,11 +1,16 @@
-# Next.js on Netlify requires the official runtime (OpenNext adapter).
-# Do NOT set `publish = ".next"` alone — that deploys raw build output as static files
-# and breaks routing (404 on every path including `/`).
+# Next.js on Netlify — @netlify/plugin-nextjs (OpenNext adapter) is required.
 #
+# If Netlify UI sets "Publish directory" to `.` or blank (repo root), the plugin
+# errors: "publish directory cannot be the same as the base directory".
+# This file overrides UI: `publish = ".next"` is the Next.js dist output; the
+# plugin then packages it for Netlify (unlike a static-only deploy without the plugin).
+#
+# In Netlify → Build settings: clear "Publish directory" or leave it; this file wins.
 # https://docs.netlify.com/integrations/frameworks/next-js/overview/
 
 [build]
   command = "npm run build"
+  publish = ".next"
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
